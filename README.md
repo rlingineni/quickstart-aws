@@ -1,5 +1,9 @@
-# Quickstart-Aws
+# Quickstart-AWS
 Contains Methods and Templates to quickly create an AWS Serverless Backend with DynamoDB or S3
+--------
+
+## Using the Above Templates
+Make an AWS Lambda function and copy paste the above template to interface with DynamoDB or S3 as an API. Make sure to pair with API Gateway.
 
 ### Getting Started With DynamoDB
 1. Login to [AWS](console.aws.amazon.com)
@@ -32,5 +36,4 @@ Contains Methods and Templates to quickly create an AWS Serverless Backend with 
 2. Create a Bucket for yourself, buckets store things such as images, documents or any other data Blob
 
 
-# Using the Above Templates
-Make an AWS Lambda function and copy paste the above template to interface with DynamoDB or S3 as an API. Make sure to pair with API Gateway.
+
