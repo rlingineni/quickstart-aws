@@ -2,6 +2,8 @@ var AWS = require('aws-sdk');
 
 const S3 = new AWS.S3();
 
+const BucketName = "{0}"
+
 exports.myHandler = function(event, context, callback) {
   switch(event.httpMethod) {
   case 'GET':
@@ -29,7 +31,7 @@ const failure = function(why) {
   let err = new Error(why);
   let resp = {
     statusCode: 400,
-    body: err;
+    body: err
   };
   return [err, resp];
 };
@@ -37,7 +39,7 @@ const failure = function(why) {
 /// retrieve an object from S3
 function handleRead(params, callback) {
   let s3Params = {
-    Bucket: {{BucketName}},
+    Bucket: BucketName,
     Key: params.key
   };
   S3.getObject(
@@ -57,7 +59,7 @@ function handleRead(params, callback) {
 /// create or update an S3 object
 function handleWrite(params, headers, body, callback) {
   let s3Params = {
-    Bucket: {{BucketName}},
+    Bucket: BucketName,
     Key: params.key,
     ContentType: headers['Content-Type'],
     Body: body
@@ -79,7 +81,7 @@ function handleWrite(params, headers, body, callback) {
 /// delete an S3 object
 function handleDelete(params, callback) {
   let s3Params = {
-    Bucket: {{BucketName}},
+    Bucket: BucketName,
     Key: params.key
   };
   S3.deleteObject(
